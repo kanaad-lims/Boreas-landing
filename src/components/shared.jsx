@@ -42,7 +42,7 @@ export function Emblem({ size = 26, className = '' }) {
   )
 }
 
-export function Wordmark({ size = 26 }) {
+export function Wordmark({ size = 50 }) {
   return (
     <span className="brand">
       <Emblem size={size} />
