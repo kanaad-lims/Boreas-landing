@@ -233,9 +233,13 @@ async function audit(label, width, height) {
     if (m.type() === 'error') errors.push('console: ' + m.text())
   })
   page.on('pageerror', (e) => errors.push('pageerror: ' + e.message))
-  page.on('requestfailed', (r) =>
-    errors.push('request failed: ' + r.url() + ' (' + (r.failure()?.errorText || '') + ')'),
-  )
+  page.on('requestfailed', (r) => {
+    const reason = r.failure()?.errorText || ''
+    // Chromium cancels and restarts metadata/range requests as the audit
+    // scrolls past the native player. The video is verified separately.
+    if (r.url().includes('/videos/') && reason === 'net::ERR_ABORTED') return
+    errors.push('request failed: ' + r.url() + ' (' + reason + ')')
+  })
 
   await page.setViewport({ width, height, deviceScaleFactor: 1 })
   await page.goto(URL, { waitUntil: 'networkidle0', timeout: 45000 })

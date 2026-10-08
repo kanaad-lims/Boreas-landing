@@ -365,6 +365,30 @@
   }
 }
 
+/* --- quiet video slot ------------------------------------------------- */
+.demo-video {
+  padding-block: clamp(40px, 7vh, 84px);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.demo-video__frame {
+  width: min(100%, 1080px);
+  aspect-ratio: 16 / 9;
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: #0d0a06;
+  box-shadow: inset 0 0 0 8px rgba(233, 180, 76, 0.025);
+}
+
+.demo-video__player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0d0a06;
+}
+
 /* --- sections & folio heads ------------------------------------------ */
 .sec {
   position: relative;

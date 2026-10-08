@@ -2,6 +2,7 @@ import { MotionConfig } from 'framer-motion'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Ticker from './components/Ticker'
+import DemoVideo from './components/DemoVideo'
 import Features from './components/Features'
 import Loop from './components/Loop'
 import Install from './components/Install'
@@ -19,6 +20,7 @@ function App() {
       <main>
         <Hero />
         <Ticker />
+        <DemoVideo />
         <Features />
         <Loop />
         <Install />
