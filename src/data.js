@@ -16,31 +16,33 @@ export const LINKS = {
 
 export const VERSION = 'v0.1.0'
 
-/** The four tools. Copy only — nothing on this list is illustrated. */
-export const TOOLS = [
+/** Core capabilities — framed as lasting architecture, not a tool list.
+ *  These four scopes will grow as the project does; the individual tools
+ *  (bash, arXiv, web, plan, and whatever comes next) live inside them. */
+export const CAPABILITIES = [
   {
-    id: 'bash',
-    title: 'Execute',
-    tool: 'bash',
-    body: 'Run shell commands inside the loop. Every call is bounded by a per-turn limit, and long output is clipped before it can spend your context.',
+    id: 'memory',
+    title: 'Persistent Memory',
+    scope: 'memory',
+    body: 'Conversation state, codebase facts, and decisions survive across sessions — stored, retrieved, and merged without manual context management.',
   },
   {
-    id: 'arxiv',
-    title: 'Research',
-    tool: 'arxiv search',
-    body: 'Look up papers without leaving the session. Results come back deduplicated and formatted down to the parts worth reading.',
+    id: 'sandbox',
+    title: 'Sandboxing',
+    scope: 'sandbox',
+    body: 'Every tool runs in an isolated environment with explicit allow-lists: filesystem, network, and process boundaries are enforced, not trusted.',
   },
   {
-    id: 'web',
-    title: 'Search',
-    tool: 'web · duckduckgo',
-    body: 'Query the live web through DuckDuckGo. Pages are reduced to the handful of lines that actually answer the question.',
+    id: 'subagents',
+    title: 'Sub-Agent Spawning',
+    scope: 'subagents',
+    body: 'The loop can delegate to focused sub-agents for parallel research, refactoring, or verification — each with its own context and budget.',
   },
   {
-    id: 'plan',
-    title: 'Plan',
-    tool: 'planning · todo',
-    body: 'The model writes its own todo before it acts, then checks items off. The plan is what keeps a long task from drifting.',
+    id: 'compaction',
+    title: 'Compaction & Context Engineering',
+    scope: 'compaction',
+    body: 'Tool output, history, and retrieved knowledge are continuously summarized, pruned, and re-ranked so the context window stays signal-dense.',
   },
 ]
 

@@ -1,15 +1,15 @@
-import { TOOLS, GUARANTEES } from '../data'
+import { CAPABILITIES, GUARANTEES } from '../data'
 import { Fragment, SectionHead } from './shared'
 
 const ICONS = {
-  bash: <path d="M3 4l5 4-5 4M9 12h4" />,
-  arxiv: <path d="M3 2h7l3 3v9H3zM6 8h4M6 11h4" />,
-  web: <path d="M8 2a6 6 0 100 12A6 6 0 008 2zM2 8h12M8 2c2 2.4 2 9.6 0 12M8 2C6 4.4 6 11.6 8 14" />,
-  plan: <path d="M2 3h4v4H2zM2 9h4v4H2zM8 5h6M8 11h6" />,
+  memory: <path d="M3 2h7l3 3v9H3zM6 8h4M6 11h4" />,
+  sandbox: <path d="M4 4h16v16H4zM9 11h6v5H9zM10 11V9a2 2 0 014 0v2" />,
+  subagents: <path d="M12 4v6M12 10L6 14M12 10l6 4" />,
+  compaction: <path d="M4 4h16M6 8h12M8 12h8M10 16h4M11 20h2" />,
 }
 
-/** One entry in the ruled sheet: an illuminated glyph, then the tool. */
-function Plate({ tool }) {
+/** One entry in the ruled sheet: an illuminated glyph, then the capability. */
+function Plate({ capability }) {
   return (
     <article className="plate">
       <div className="plate__body">
@@ -23,12 +23,12 @@ function Plate({ tool }) {
             strokeLinejoin="miter"
             shapeRendering="crispEdges"
           >
-            {ICONS[tool.id]}
+            {ICONS[capability.id]}
           </svg>
         </span>
-        <p className="plate__tool">{tool.tool}</p>
-        <h3 className="plate__title">{tool.title}</h3>
-        <p className="plate__text">{tool.body}</p>
+        <p className="plate__tool">{capability.scope}</p>
+        <h3 className="plate__title">{capability.title}</h3>
+        <p className="plate__text">{capability.body}</p>
       </div>
     </article>
   )
@@ -42,14 +42,14 @@ export default function Features() {
       <SectionHead
         folio="i"
         id="features-title"
-        title="Four tools"
-        lede="No plugin marketplace, no thirty-tool sprawl. BOREAS-AGENT carries four tools on a single LangGraph loop — chosen because a coding agent needs to run things, look things up, and remember what it was doing."
+        title="Architecture"
+        lede="No plugin marketplace, no fixed tool list. Four architectural scopes define the harness — persistent memory, sandboxed execution, sub-agent delegation, and continuous compaction. Tools (bash, arXiv, web, plan, and whatever comes next) live inside these boundaries."
       />
 
       <div className="sheet">
         <div className="plates">
-          {TOOLS.map((t) => (
-            <Plate key={t.id} tool={t} />
+          {CAPABILITIES.map((c) => (
+            <Plate key={c.id} capability={c} />
           ))}
         </div>
 
