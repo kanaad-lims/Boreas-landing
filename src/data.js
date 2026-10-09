@@ -3,8 +3,6 @@ import vision from './assets/web/vision.jpg'
 import painter from './assets/web/painter.jpg'
 import tinker from './assets/web/tinker.jpg'
 
-import pxTinker from './assets/web/px-tinker.png'
-
 /**
  * Fill these in when the repo and docs site are live.
  * Everything else on the page reads from this module.
@@ -108,16 +106,15 @@ export const GUARANTEES = [
 
 /** The ticker strip: what the harness is actually made of. */
 export const STACK = [
-  'groq models',
+  'persistent memory',
   'langgraph tool loop',
-  'bash',
-  'arxiv search',
-  'duckduckgo web search',
-  'planning / todo',
-  'rich + prompt_toolkit',
-  'per-turn limits',
-  'retries',
-  'compact results',
+  'bash tools',
+  'research',
+  'web search access',
+  'planning loop',
+  'compaction',
+  'sandbox',
+  'subagents',
 ]
 
 /** The hero session. Rendered one character at a time. */
@@ -133,6 +130,3 @@ export const SESSION = [
   { kind: 'ok', text: '13 passed in 0.42s', pause: 340 },
   { kind: 'done', text: '6 turns, 1 retry, output clipped to 1.2k tokens', pause: 3600 },
 ]
-
-/** The pixelated plate used as the hero's atmospheric backdrop. */
-export const PX_ART = pxTinker

@@ -74,9 +74,7 @@ function collect() {
     })
     .map((i) => i.getAttribute('src'))
 
-  const term = document.querySelector('.hero .term__body')
-  out.termRows = term ? term.querySelectorAll('.t-row').length : -1
-  out.termDone = !!document.querySelector('.hero .t-row--done')
+  out.heroTerminalPresent = !!document.querySelector('.hero .term')
 
   out.plates = [...document.querySelectorAll('.plate')].map((p) => {
     const r = p.getBoundingClientRect()
@@ -303,7 +301,7 @@ for (const [label, w, h] of [
     p('fonts: ' + JSON.stringify(R.fonts))
   if (R.sections.some((s) => s.includes('MISSING'))) p('sections: ' + R.sections.join(' '))
   if (R.badImgs.length) p('broken images: ' + R.badImgs.join(', '))
-  if (!R.termDone || R.termRows < 10) p(`terminal rows=${R.termRows} done=${R.termDone}`)
+  if (R.heroTerminalPresent) p('hero terminal should be removed')
   if (R.plates.length !== 4) p('plates: ' + R.plates.join(', '))
   if (R.steps !== 4) p('steps: ' + R.steps)
   if (R.activeStep < 0 || R.nodesLit !== 1)
@@ -321,7 +319,7 @@ for (const [label, w, h] of [
   if (low.length) p('contrast < 4.5:1 -> ' + low.join(', '))
 
   notes.push(
-    `[${label}] h1=${R.h1?.size} ${R.h1?.font} lines=${R.h1?.lines} | term rows=${R.termRows} done=${R.termDone} | ` +
+    `[${label}] h1=${R.h1?.size} ${R.h1?.font} lines=${R.h1?.lines} | hero terminal=${R.heroTerminalPresent} | ` +
       `plates=${R.plates.join(' ')} | activeStep=${R.activeStep} lit=${R.nodesLit} | imgs=${R.imgCount} bad=${R.badImgs.length} | copy=${R.copyBtns} | frags=${R.frags.length}`,
   )
   notes.push('  ' + R.contrast.join('  '))

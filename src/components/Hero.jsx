@@ -1,29 +1,13 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
-import { VERSION, STACK, PX_ART } from '../data'
+import { VERSION } from '../data'
 import { CommandLine, Reveal } from './shared'
-import Terminal from './Terminal'
+import moon from '../assets/web/moon.jpg'
 
 export default function Hero() {
-  const wrapRef = useRef(null)
-  const reduce = useReducedMotion()
-
-  const { scrollYProgress } = useScroll({
-    target: wrapRef,
-    offset: ['start start', 'end start'],
-  })
-  const artY = useTransform(scrollYProgress, [0, 1], [0, 150])
-  const artFade = useTransform(scrollYProgress, [0, 1], [0.34, 0.05])
-
   return (
-    <section className="hero-wrap" id="top" ref={wrapRef}>
-      <motion.div
-        className="hero__art"
-        aria-hidden="true"
-        style={reduce ? undefined : { y: artY, opacity: artFade }}
-      >
-        <img src={PX_ART} alt="" />
-      </motion.div>
+    <section className="hero-wrap" id="top">
+      <div className="hero__art" aria-hidden="true">
+        <img src={moon} alt="" />
+      </div>
       <div className="hero__scrim" aria-hidden="true" />
 
       <div className="hero">
@@ -69,17 +53,14 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={0.44}>
-              <ul className="hero__stack">
+              {/* <ul className="hero__stack">
                 {STACK.slice(0, 6).map((s) => (
                   <li key={s}>{s}</li>
                 ))}
-              </ul>
+              </ul> */}
             </Reveal>
           </div>
 
-          <Reveal delay={0.34} className="hero__term">
-            <Terminal />
-          </Reveal>
         </div>
       </div>
     </section>

@@ -180,18 +180,18 @@
 
 .hero__art img {
   position: absolute;
-  top: 50%;
-  right: -7%;
+  top: 54%;
+  right: clamp(48px, 9vw, 132px);
   transform: translateY(-50%);
-  width: min(760px, 58vw);
-  opacity: 0.34;
-  image-rendering: pixelated;
-  /* invert the cream ground away, then pull the ink toward gold leaf */
-  filter: invert(1) sepia(1) saturate(3.2) hue-rotate(-6deg) brightness(0.92)
-    contrast(1.18);
+  height: min(94svh, 950px);
+  width: auto;
+  max-width: 54vw;
+  object-fit: contain;
+  opacity: 1;
+  filter: sepia(0.82) saturate(1.22) brightness(1.42) contrast(1.08);
   mix-blend-mode: screen;
-  -webkit-mask-image: radial-gradient(62% 62% at 52% 50%, #000 32%, transparent 100%);
-  mask-image: radial-gradient(62% 62% at 52% 50%, #000 32%, transparent 100%);
+  -webkit-mask-image: radial-gradient(72% 76% at 52% 48%, #000 48%, transparent 100%);
+  mask-image: radial-gradient(72% 76% at 52% 48%, #000 48%, transparent 100%);
 }
 
 .hero__scrim {
@@ -258,7 +258,7 @@
 
 .hero__cols {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(28px, 4vw, 56px);
   align-items: start;
   margin-top: clamp(8px, 1.6vh, 22px);
@@ -1344,9 +1344,13 @@
   }
 
   .hero__art img {
-    right: -18%;
-    width: min(560px, 96vw);
-    opacity: 0.22;
+    top: auto;
+    right: 2%;
+    bottom: -10%;
+    transform: none;
+    height: min(66svh, 640px);
+    max-width: 88vw;
+    opacity: 0.34;
   }
 
   .install {
