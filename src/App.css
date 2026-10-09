@@ -185,10 +185,10 @@
   transform: translateY(-50%);
   height: min(94svh, 950px);
   width: auto;
-  max-width: 54vw;
+  max-width: min(40vw, 640px);
   object-fit: contain;
   opacity: 1;
-  filter: sepia(0.82) saturate(1.22) brightness(1.42) contrast(1.08);
+  filter: grayscale(1) sepia(1) saturate(1.25) brightness(1.55) contrast(1.12);
   mix-blend-mode: screen;
   -webkit-mask-image: radial-gradient(72% 76% at 52% 48%, #000 48%, transparent 100%);
   mask-image: radial-gradient(72% 76% at 52% 48%, #000 48%, transparent 100%);

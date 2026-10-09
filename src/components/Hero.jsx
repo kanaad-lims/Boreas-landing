@@ -1,12 +1,12 @@
 import { VERSION } from '../data'
 import { CommandLine, Reveal } from './shared'
-import moon from '../assets/web/moon.jpg'
+import star from '../assets/star.png'
 
 export default function Hero() {
   return (
     <section className="hero-wrap" id="top">
       <div className="hero__art" aria-hidden="true">
-        <img src={moon} alt="" />
+        <img src={star} alt="" />
       </div>
       <div className="hero__scrim" aria-hidden="true" />
 

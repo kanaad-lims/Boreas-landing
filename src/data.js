@@ -9,7 +9,7 @@ import tinker from './assets/web/tinker.jpg'
  */
 export const LINKS = {
   docs: '#',
-  github: '#',
+  github: 'https://github.com/kanaad-lims/AgentHarness',
 }
 
 export const VERSION = 'v0.1.0'
