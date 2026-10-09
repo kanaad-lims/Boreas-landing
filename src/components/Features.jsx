@@ -42,7 +42,7 @@ export default function Features() {
       <SectionHead
         folio="i"
         id="features-title"
-        title="Architecture"
+        title="Features"
         lede="No plugin marketplace, no fixed tool list. Four architectural scopes define the harness — persistent memory, sandboxed execution, sub-agent delegation, and continuous compaction. Tools (bash, arXiv, web, plan, and whatever comes next) live inside these boundaries."
       />
 

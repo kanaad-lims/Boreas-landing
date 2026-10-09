@@ -104,7 +104,7 @@ export default function Terminal({ compact = false }) {
           <i />
         </span>
         <span className="term__title">boreas-agent — session 0x1f</span>
-        <span className="term__badge">gold on black</span>
+        <span className="term__badge">Active</span>
       </div>
 
       <div className="term__body" ref={bodyRef}>

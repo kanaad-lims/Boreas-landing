@@ -1242,13 +1242,13 @@
 
 /* small, still, and fully in view — a loose plate left lying on the page */
 .frag--install {
-  --w: clamp(200px, 18vw, 252px);
-  --overlap: 60px;
+  --w: clamp(350px, 25vw, 200px);
+  --overlap: 150px;
   width: var(--w);
   left: calc(
     100% - max(var(--gut), (100% - var(--maxw)) / 2) - var(--overlap)
   );
-  bottom: clamp(12px, 2.5vh, 34px);
+  bottom: clamp(12px, 0.1vh, 20px);
   aspect-ratio: 4 / 3;
   transform: rotate(-1.7deg);
   opacity: 0.52;

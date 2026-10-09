@@ -44,9 +44,9 @@ export default function Hero() {
 
         <Reveal delay={0.14}>
           <h1 className="hero__title">
-            A coding agent,
+            One from All,
             <br />
-            forged from scratch.
+            All from One.
           </h1>
         </Reveal>
 
@@ -54,10 +54,8 @@ export default function Hero() {
           <div className="hero__lede">
             <Reveal delay={0.26}>
               <p>
-                BOREAS-AGENT is a from-scratch Python harness for Groq models. It
-                runs a LangGraph loop over four tools — bash, arXiv, DuckDuckGo
-                web search, and a plan — bounded by per-turn limits, retries and
-                compact output, all driven from a gold-on-black terminal.
+                BOREAS-AGENT is a coding harness developed from scratch in Python with a LangGraph orchestrator loop in the middle. Combined with the best features from open-source harnesses thus, truly living up to the phrase - One from All, All from One.
+                Explore possibilities in Features section.
               </p>
             </Reveal>
 
@@ -65,8 +63,7 @@ export default function Hero() {
               <div className="hero__install">
                 <CommandLine cmd="pipx install boreas-agent" />
                 <p className="hero__note">
-                  Placeholder — the package is not on PyPI yet. Until then,
-                  clone the repo and run it from source.
+                  Package yet to be released. Stay tuned!
                 </p>
               </div>
             </Reveal>

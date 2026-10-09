@@ -98,7 +98,7 @@ export const GUARANTEES = [
   },
   {
     k: 'retries',
-    v: 'A failed call is retried, then re-planned from the step that broke, before the harness gives up on it.',
+    v: 'A failed call is retried, then re-planned from the step that broke. Exits gracefully in case it fails to execute the task.',
   },
   {
     k: 'compact results',
