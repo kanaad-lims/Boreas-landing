@@ -24,7 +24,7 @@
   --hair: #221a0e; /* the 1px that gap-grids show through */
 
   /* --- type -------------------------------------------------------- */
-  --display: "Pixelify Sans", ui-monospace, "Courier New", monospace;
+  --display: "Bodoni Moda SC", "Bodoni Moda", serif;
   --body: "EB Garamond", Georgia, "Times New Roman", serif;
   --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
 

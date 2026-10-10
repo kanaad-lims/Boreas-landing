@@ -53,7 +53,7 @@ function collect() {
 
   out.bodyBg = getComputedStyle(document.body).backgroundColor
   out.fonts = {
-    pixelify: document.fonts.check('16px "Pixelify Sans"'),
+    bodoni: document.fonts.check('16px "Bodoni Moda SC"'),
     garamond: document.fonts.check('16px "EB Garamond"'),
     mono: document.fonts.check('16px "JetBrains Mono"'),
   }
@@ -297,7 +297,7 @@ for (const [label, w, h] of [
   if (R.docOverflow > 2) p(`horizontal overflow ${R.docOverflow}px`)
   if (R.wide.length) p('unclipped elements past viewport: ' + R.wide.join(' ; '))
   if (!R.h1) p('missing hero title')
-  if (!R.fonts.pixelify || !R.fonts.garamond || !R.fonts.mono)
+  if (!R.fonts.bodoni || !R.fonts.garamond || !R.fonts.mono)
     p('fonts: ' + JSON.stringify(R.fonts))
   if (R.sections.some((s) => s.includes('MISSING'))) p('sections: ' + R.sections.join(' '))
   if (R.badImgs.length) p('broken images: ' + R.badImgs.join(', '))
