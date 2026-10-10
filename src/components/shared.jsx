@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import emblem from '../assets/hero.png'
 import { FRAGMENTS } from '../data'
 
@@ -12,16 +12,34 @@ import { FRAGMENTS } from '../data'
  */
 export function Fragment({ name, className = '', eager = false }) {
   const art = FRAGMENTS[name]
+  const ref = useRef(null)
+  const reduceMotion = useReducedMotion()
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  })
+  const imageY = useTransform(scrollYProgress, [0, 1], [-16, 16])
+
   if (!art) return null
 
+  const imageProps = {
+    src: art.src,
+    alt: '',
+    loading: eager ? undefined : 'lazy',
+    style: { filter: `sepia(0.9) saturate(1.12) brightness(${art.grade})` },
+  }
+
   return (
-    <div className={`frag${className ? ` ${className}` : ''}`} aria-hidden="true">
-      <img
-        src={art.src}
-        alt=""
-        loading={eager ? undefined : 'lazy'}
-        style={{ filter: `sepia(0.9) saturate(1.12) brightness(${art.grade})` }}
-      />
+    <div
+      className={`frag${className ? ` ${className}` : ''}`}
+      aria-hidden="true"
+      ref={ref}
+    >
+      {name === 'footer' ? (
+        <img {...imageProps} />
+      ) : (
+        <motion.img {...imageProps} style={{ ...imageProps.style, y: reduceMotion ? 0 : imageY }} />
+      )}
     </div>
   )
 }

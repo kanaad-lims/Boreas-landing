@@ -1214,6 +1214,12 @@
   object-position: center 40%;
 }
 
+.frag:not(.frag--footer) img {
+  position: absolute;
+  top: -10%;
+  height: 120%;
+}
+
 /* high and to the right, turning as it slides off the edge */
 .frag--features {
   --w: clamp(300px, 33vw, 476px);
