@@ -1,6 +1,5 @@
 import { useRef } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
-import { VERSION } from '../data'
 import { CommandLine, Reveal } from './shared'
 import star from '../assets/star.png'
 
@@ -11,7 +10,7 @@ export default function Hero() {
     target: wrapRef,
     offset: ['start start', 'end start'],
   })
-  const artY = useTransform(scrollYProgress, [0, 1], [0, 96])
+  const artY = useTransform(scrollYProgress, [0, 1], [0, 160])
 
   return (
     <section className="hero-wrap" id="top" ref={wrapRef}>
@@ -25,21 +24,6 @@ export default function Hero() {
       <div className="hero__scrim" aria-hidden="true" />
 
       <div className="hero">
-        <Reveal delay={0.05}>
-          <p className="hero__status">
-            <i className="status-dot" aria-hidden="true" />
-            <span>under development</span>
-            <span className="hero__bar" aria-hidden="true">
-              |
-            </span>
-            <span className="hero__ver">{VERSION}</span>
-            <span className="hero__bar" aria-hidden="true">
-              |
-            </span>
-            <span>python · groq · langgraph</span>
-          </p>
-        </Reveal>
-
         <Reveal delay={0.14}>
           <h1 className="hero__title">
             One from All,
