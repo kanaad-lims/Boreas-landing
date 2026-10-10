@@ -46,6 +46,10 @@ html {
   scroll-padding-top: calc(var(--nav-h) + 20px);
 }
 
+html.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
 body {
   margin: 0;
   background: var(--void);
