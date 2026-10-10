@@ -1,13 +1,27 @@
+import { useRef } from 'react'
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { VERSION } from '../data'
 import { CommandLine, Reveal } from './shared'
 import star from '../assets/star.png'
 
 export default function Hero() {
+  const wrapRef = useRef(null)
+  const reduceMotion = useReducedMotion()
+  const { scrollYProgress } = useScroll({
+    target: wrapRef,
+    offset: ['start start', 'end start'],
+  })
+  const artY = useTransform(scrollYProgress, [0, 1], [0, 96])
+
   return (
-    <section className="hero-wrap" id="top">
-      <div className="hero__art" aria-hidden="true">
+    <section className="hero-wrap" id="top" ref={wrapRef}>
+      <motion.div
+        className="hero__art"
+        aria-hidden="true"
+        style={reduceMotion ? undefined : { y: artY }}
+      >
         <img src={star} alt="" />
-      </div>
+      </motion.div>
       <div className="hero__scrim" aria-hidden="true" />
 
       <div className="hero">
