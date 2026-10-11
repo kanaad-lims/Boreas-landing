@@ -212,7 +212,7 @@
   position: relative;
   z-index: 2;
   min-height: 100svh;
-  padding-block: calc(var(--nav-h) + clamp(50px, 8vh, 92px)) clamp(56px, 8vh, 88px);
+  padding-block: calc(var(--nav-h) + clamp(100px, 8vh, 92px)) clamp(56px, 8vh, 88px);
   display: flex;
   flex-direction: column;
   gap: clamp(16px, 2.2vh, 26px);
