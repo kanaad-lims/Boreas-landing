@@ -36,7 +36,7 @@ export default function Hero() {
           <div className="hero__lede">
             <Reveal delay={0.26}>
               <p>
-                BOREAS-AGENT is a coding harness developed from scratch in Python with a LangGraph orchestrator loop in the middle. Combined with the best features from open-source harnesses thus, truly living up to the phrase - One from All, All from One.
+                BOREAS-AGENT unites features from open-source harnesses, thus truly living up to the moto - <i>One from All, All from One.<br></br></i>
                 Explore possibilities in Features section.
               </p>
             </Reveal>
