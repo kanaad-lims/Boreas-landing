@@ -3,12 +3,9 @@ import vision from './assets/web/vision.jpg'
 import painter from './assets/web/painter.jpg'
 import tinker from './assets/web/tinker.jpg'
 
-/**
- * Fill these in when the repo and docs site are live.
- * Everything else on the page reads from this module.
- */
+/** Shared project destinations used by the landing page and documentation. */
 export const LINKS = {
-  docs: '#',
+  docs: '/docs',
   github: 'https://github.com/kanaad-lims/AgentHarness',
 }
 

@@ -7,7 +7,7 @@ const CARDS = [
     k: 'documentation',
     title: 'Read the docs',
     url: 'docs / boreas-agent',
-    body: 'Tool reference, the loop explained, and how to wire up your own Groq model.',
+    body: 'Architecture, current tools and limits, setup instructions, and the project roadmap.',
   },
   {
     href: LINKS.github,
@@ -25,7 +25,7 @@ export default function Connect() {
         folio="iv"
         id="docs-title"
         title="Docs & source"
-        lede="Both links are placeholders until the repository and docs site go public."
+        lede="Read how the harness works, get it running locally, and see what is planned next."
       />
 
       <div className="connect">

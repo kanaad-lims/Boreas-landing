@@ -6,7 +6,7 @@ const NAV = [
   { href: '#features', label: 'features' },
   { href: '#loop', label: 'how it works' },
   { href: '#install', label: 'install' },
-  { href: '#docs', label: 'docs' },
+  { href: LINKS.docs, label: 'docs' },
 ]
 
 export default function Nav() {
