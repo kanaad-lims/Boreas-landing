@@ -16,8 +16,8 @@ export default function Footer() {
               </span>
             </span>
             <p className="footer__tag">
-              A from-scratch Python coding-agent harness. Groq models, a
-              LangGraph tool loop, and a gold-on-black terminal.
+              A modular, from-scratch coding-agent harness built with LangGraph and Python.
+Designed for tool-use loops, enforced policies, compact formatting, and a clean terminal experience.
             </p>
           </div>
 
@@ -40,7 +40,7 @@ export default function Footer() {
         <div className="footer__base">
           <span>{VERSION} — under development</span>
           <span className="footer__base-note">
-            static page · no backend · built with react + vite
+            © 2026 Kanaad Limaye. All rights reserved.
           </span>
         </div>
       </div>
